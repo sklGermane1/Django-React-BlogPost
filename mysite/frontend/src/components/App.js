@@ -6,8 +6,11 @@ import CreatePost from './posts/createPost'
 import Posts from "./posts/posts"
 import UpdatePost from './posts/updatePost'
 import About from "./common/about"
+import {Provider} from "react-redux"
+import store from "../store"
 function App(){
     return (
+        <Provider store={store}>
         <Fragment>
         <Navbar />
         <Router>
@@ -19,6 +22,7 @@ function App(){
         </Switch>
         </Router>
         </Fragment>
+        </Provider>
     )
 }
 
