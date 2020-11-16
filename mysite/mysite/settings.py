@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "knox",
+    "rest_framework",
+    "accounts.apps.AccountsConfig",
+    "frontend.apps.FrontendConfig",
+    "backend.apps.BackendConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
