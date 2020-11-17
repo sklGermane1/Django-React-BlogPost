@@ -8,6 +8,8 @@ import UpdatePost from './posts/updatePost'
 import About from "./common/about"
 import {Provider} from "react-redux"
 import store from "../store"
+import DetailPage from "./posts/detailPage"
+import detailPage from './posts/detailPage'
 function App(){
     return (
         <Provider store={store}>
@@ -19,6 +21,7 @@ function App(){
             <Route exact path="/create-post" component={CreatePost} />
             <Route exact path="/update-post/:id" component={UpdatePost} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/detail/:id" component={detailPage} />
         </Switch>
         </Router>
         </Fragment>
