@@ -8,13 +8,21 @@ import UpdatePost from './posts/updatePost'
 import About from "./common/about"
 import {Provider} from "react-redux"
 import store from "../store"
-import DetailPage from "./posts/detailPage"
 import detailPage from './posts/detailPage'
+import { Provider as AlertProvider } from "react-alert"
+import AlertTemplate from "react-alert-template-basic"
+import Alerts from './alerts'
+const alertOptions = {
+    timeout: 3000,
+    position: "top center"
+}
 function App(){
     return (
         <Provider store={store}>
+        <AlertProvider template={AlertTemplate} {...alertOptions}>
         <Fragment>
         <Navbar />
+        <Alerts />
         <Router>
         <Switch>
             <Route exact path="/" component={Posts} />
@@ -25,6 +33,7 @@ function App(){
         </Switch>
         </Router>
         </Fragment>
+        </AlertProvider>
         </Provider>
     )
 }

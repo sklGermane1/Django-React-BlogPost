@@ -9,6 +9,9 @@ function Posts(props){
     const handleEdit = (id) => {
         props.history.push(`/update-post/${id}`)
     }
+    const detailPage = (id) => {
+        props.history.push(`/detail/${id}`)
+    }
     return (
         <div className="container">
             <h1 className="text-center mt-3">Posts</h1>
@@ -17,7 +20,7 @@ function Posts(props){
                 <div className="card shadow-lg bg-white rounded mt-5 mb-5" key={post.id}>
                 <div className="card-body">
                     <h5 className="card-title d-flex">
-                    {post.title}
+                    <a onClick={() => detailPage(post.id)}>{post.title}</a>
                     <span className="ml-3">by AUTHOR</span> <span className=" ml-auto text-muted">
                     {post.created_at}</span>
                     </h5>

@@ -12,3 +12,9 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
+
+    # def get_queryset(self):
+    #     return self.request.user.posts.all()
+
+    # def perform_create(self, serializer):
+    #     serializer.save(author=self.request.user)
