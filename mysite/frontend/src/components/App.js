@@ -17,7 +17,7 @@ function App(){
         <Switch>
             <Route exact path="/" component={Posts} />
             <Route exact path="/create-post" component={CreatePost} />
-            <Route exact path="/update-post" component={UpdatePost} />
+            <Route exact path="/update-post/:id" component={UpdatePost} />
             <Route exact path="/about" component={About} />
         </Switch>
         </Router>

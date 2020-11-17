@@ -6,6 +6,9 @@ function Posts(props){
     useEffect(() =>{
         props.getPosts()
     })
+    const handleEdit = (id) => {
+        props.history.push(`/update-post/${id}`)
+    }
     return (
         <div className="container">
             <h1 className="text-center mt-3">Posts</h1>
@@ -23,7 +26,7 @@ function Posts(props){
                 <div className="form-group d-flex">
                     <div className="ml-auto">
                         <button className="btn btn-outline-danger mr-2" onClick={() => props.deletePost(post.id)}>Delete</button>
-                        <button className="btn btn-outline-info mr-2">Edit</button>
+                        <button className="btn btn-outline-info mr-2" onClick={() => handleEdit(post.id)}>Edit</button>
                     </div>
                 </div>
             </div>   
