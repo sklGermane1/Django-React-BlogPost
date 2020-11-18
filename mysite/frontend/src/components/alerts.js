@@ -16,6 +16,8 @@ function Alerts(props) {
             if(error.msg.title) alert.error(`Title: ${error.msg.title.join()}`)
             
             if(error.msg.content) alert.error(`Content: ${error.msg.content.join()}`)
+                        
+            if(error.msg.username) alert.error(error.msg.username.join())
             
         }
         if(message){   
@@ -25,6 +27,7 @@ function Alerts(props) {
         if(message.postAdded){
             if(message.postAdded) alert.success(message.postAdded)
         }
+        if(message.passwordsNotMatch) alert.error(message.passwordsNotMatch)
         }
 
     }

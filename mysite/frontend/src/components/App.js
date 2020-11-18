@@ -14,6 +14,8 @@ import AlertTemplate from "react-alert-template-basic"
 import Alerts from './alerts'
 import PrivateRoute from './common/PrivateRoute'
 import { loadUser } from '../actions/auth'
+import Login from './auth/login'
+import Register from './auth/register'
 const alertOptions = {
     timeout: 3000,
     position: "top center"
@@ -28,11 +30,13 @@ function App(){
         <Alerts />
         <Router>
         <Switch>
-            <Route exact path="/" component={Posts} />
+            <PrivateRoute exact path="/" component={Posts} />
             <PrivateRoute exact path="/create-post" component={CreatePost} />
             <PrivateRoute exact path="/update-post/:id" component={UpdatePost} />
             <Route exact path="/about" component={About} />
             <PrivateRoute exact path="/detail/:id" component={detailPage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
         </Switch>
         </Router>
         </Fragment>
